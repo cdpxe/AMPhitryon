@@ -1,0 +1,116 @@
+=== catties is now known as Catty
+=== antonispgs4 is now known as antonispgs
+[03:46] <ghostworker> bonjour
+=== Target_Platypus5 is now known as Target_Platypus
+[04:32] <UndrWater_> bon soir
+=== Remy_ is now known as Remy
+[06:56] <tomreyn> nickzxcv: if the issue described at https://blogs.ed.ac.uk/lcfg/2023/06/12/ubuntu-jammy-progress-10/ affects your dell server / workstation, could you please file a bug so this can be examined and fixed for everyone?
+[07:37] <happymouse78> Hello
+[07:41] <happymouse78> Hi
+[07:42] <ginosaji> hi hitler ! ;-)
+[07:42] <happymouse78> How is your day?
+[07:45] <ginosaji> The day it's like a gay, for fucking your brain :-)
+[07:46] <happymouse78> What?
+[07:47] <ginosaji> go google for say what a googoo !!! :-)
+[07:48] <happymouse78> Are you white? Because I am white and I can't understand you
+[07:48] <happymouse78> \
+[07:48] <Omio> e_e Your lexicon retains the depth of a tile floor, ginosaji. Please troll elsewhere.
+[07:49] <ginosaji> im #GGGGGG i have the level for you are only on #FFFFFFF ?
+[07:51] <Omio> Thank you, tom.
+[07:52] <tomreyn> my pleasure
+[07:55] <Omio> I'm sure I'll have to do similar on Discord in several hours, so I can't say I don't know the feel - but I digress. Using gnome-session-flashback for a familiar-yet-different feel is kinda nice. Reminds me of the Ubuntu of like 8.x, and I think 10.x, we ended up on a new DE on 12 iirc.
+[07:56] <tomreyn> please remember this channel is for ubuntu support only, thanks.
+[07:56] <tomreyn> (there's #ubuntu-offtopic and -discuss also)
+[07:57] <Omio> Right. o7
+[08:39] <mgedmin> whoa, suddenly mouse no longer works on this thinkpad x390 (ubuntu 25.10)
+[08:39] <mgedmin> I was in the middle of a kernel update (via update-manager) and I can't move the mouse cursor any more
+[08:39] <mgedmin> neither the trackpoint nor the touchpad work; an external usb mouse (actually a lenovo keyboard with an integrated trackpoint) works fine
+[08:45] <mgedmin> journalctl doesn't show anything suspicious
+[08:46] <happymouse78> Did you try rebooting it?
+[08:47] <mgedmin> reboot tends to fix issues, but it also buries the evidence needed to diagnose them
+[08:47] <mgedmin> I don't think I'll be able to figure anything out here, so I'm going to reboot now
+[08:48] <mgedmin> it's always very funny when 'reboot' in a terminal says it's been inhibited by ubuntu's update-manager, which is not doing anything right now, except showing me a "please reboot now" nag screen
+[08:48] <mgedmin> stop inhibiting the reboot, you thing
+[08:49] <mgedmin> hmm?  hmmm??  I alt-tabbed to the update manager, triggered the reboot now
+[08:49] <mgedmin> I got a second confirmation dialog (from gnome-shell?) asking to restart, with a 60 second timeout
+[08:49] <mgedmin> I confirmed that one, now nothing is happening
+[08:52] <happymouse78> Try pressing the power button on your thinkpad until it turns off
+[08:58] <mgedmin> had to run 'reboot' again in a terminal and it booted fine and mouse now works
+[08:58] <mgedmin> and now snap wants me to restart firefox lol why can't the os do all the updates in one go?
+=== test230118 is now known as test230117
+[09:24] <tuxick> btw, am i just unliky or is firefox in snap just a disaster?
+[09:24] <tuxick> unlucky
+[09:25] <tuxick> every few days i have to shoot all instances because it stops responding
+[09:30] <tomreyn> tuxick: #ubuntu-discuss and, moreover, https://community.ubuntu.com are places where you could try to have a discussion on this topic, source other peoples' experience / opinions on the matter.
+[09:32] <tuxick> ok
+[09:33] <tomreyn> alternatively, if you suspect a bug, you could report that (after looking for existing *exactly* matching bug reports)
+[09:34] <mgedmin> hm, sometimes (pretty rarely) my firefox stops being able to communicate with itself (clicking links in other apps shows a 'firefox is running but not responding' dialog after a long timeout)
+[09:35] <mgedmin> but I don't know if that's snap related, and I haven't figured out a way of reproducing
+[10:02] <gracie> okay
+[10:02] <gracie> what is the meaning of grace
+=== noah0 is now known as noah
+[12:19] <BluesKaj> Hi all
+[14:55] <waltman> Hi all. I did an update to 25.10 last night. Since then I'm seeing a much higher load than normal, although nothing is obviously causing it on top. Also I'm no longer able to ssh into the box. Anyone else seeing this?
+[14:56] <waltman> There were updates to the kernel as well as bpftool
+[15:22] <Franciman> hi, I'm trying to configure a static IP on my ubuntu server. But it doesn't connect to internet. So I tried troubleshooting and I found out that the problem is that the gateway is not responding my pc's arpa messages. If I run ip neigh show, i get a INCOMPLETE status for the request to the gateway
+[15:22] <Franciman> what do you think may be the problem?
+[15:22] <Franciman> I had other pcs connected seamlessly by just specifying static ip, subnet mask and gateway
+[15:25] <waltman_> I think I might be hitting this bug: https://bugs.launchpad.net/ubuntu/+source/openssh/+bug/2130448
+[15:25] -ubottu:#ubuntu- Launchpad bug 2130448 in openssh (Ubuntu) "ssh command in 25.10 fails to connect with RSA key and waits" [High, Confirmed]
+[15:32] <waltman_> Actually it's not that bug. My laptop's ~/.ssh only has an ED25519 key but it still won't connect. One of the last messages is "debug1: Entering interactive session." but then it just hangs. I can't C-c it but eventually it times out.
+[15:38] <mdisbuda> CLEAR
+[15:47] <xless1> ive always used vi on $USER/.ssh/known_hosts to remove 'Offending ... key', the help text says to use ssh-keygen ... -R ...
+[15:48] <xless1> one for the notes?
+=== hangs is now known as hangz
+=== hangz is now known as hangq
+=== misterHaderach3 is now known as misterHaderach
+=== f6- is now known as f6
+=== Niklp4 is now known as Niklp
+=== djhankb93118 is now known as djhankb9311
+=== antonispgs3 is now known as antonispgs
+=== gandalf7209 is now known as gandalf720
+=== denysonique3134 is now known as denysonique313
+=== Target_Platypus0 is now known as Target_Platypus
+=== Zareem7 is now known as Zareem
+=== peto2 is now known as peto
+=== f6 is now known as Guest1231
+=== ancientz9 is now known as ancientz
+=== hakabuam7 is now known as hakabuam
+=== test230118 is now known as test230117
+[17:35] <antidisko> Cool I did it :)
+=== SirScott1 is now known as SirScott
+=== PipeItToDevNull2 is now known as PipeItToDevNull
+=== travisghansen8 is now known as travisghansen
+=== nshire3 is now known as rnicrosoft
+=== Fordadr is now known as Fordaro
+=== travisghansen0 is now known as travisghansen
+[18:32] <lucascito_03> Hello?
+[18:32] <antidisko> Hi
+[18:32] <lucascito_03> How are you doing?
+[18:33] <antidisko> A bit overwhelmed trying to learn things, just got this working so today was a success
+[18:33] <mortuza> Hello
+[18:33] <lotuspsychje> !chat
+[18:33] <ubottu> #ubuntu is the Ubuntu support channel, for all Ubuntu-related support questions. Please use #ubuntu-offtopic for other topics (though our !guidelines apply there too). Thanks!
+[18:34] <lucascito_03> That's fair, I just got IRC working too through HexChat`
+[18:34] <lucascito_03> Also hi mortuza
+[18:34] <lucascito_03> I'm gonna move channels now
+=== paran0n8 is now known as paran0n
+[18:41] <antidisko> If I try to change permissions for other people in my group, should I prompt the whole permission chain "chmod -rw-rw---- filename"?
+[18:42] <antidisko> Or is there a shorter way to do so?
+[18:45] <lotuspsychje> !chmod | antidisko
+[18:45] <ubottu> antidisko: An explanation of what file permissions are and how they can be manipulated can be found at https://help.ubuntu.com/community/FilePermissions
+[18:46] <antidisko> Cheers, I'll go check it out
+=== Juesto is now known as Juest
+=== travisghansen5 is now known as travisghansen
+=== ancientz7 is now known as ancientz
+=== ancientz8 is now known as ancientz
+[20:35] <Group-Deed> So, I'm having this super annoying problem where anytime I'm in a program that gives me a file browser to pick a file... I cannot click on it with the mouse.
+[20:44] <gordonjcp> Group-Deed: oh
+[20:45] <gordonjcp> Group-Deed: yes, there's a reason for that, something falls over
+[22:04] <tawa7ed> hi
+=== Fordadr is now known as Fordaro
+[22:29] <Sernix> hey
+[23:25] <hresco3> I used apt-get remove on both php7.4-fpm and php8.1-fpm; and apt-get install php8.3-fpm.  Even after restarting services with kill -9, service, sv and /etc/init.d scripts, the ps table still shows 7.4 and 8.1 running, no sign of 8.3.  What might I be missing please?
+[23:28] <hresco3> even with apt-get --purge remove, the legacy php versions still restart.
+[23:28] <hresco3> The 8.3 version fails to start.
+[23:29] <hresco3> never mind, 8.3 did start
