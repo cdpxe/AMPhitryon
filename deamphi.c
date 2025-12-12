@@ -1,5 +1,5 @@
  /* AMPhitryon's decompressor, see `LICENSE' file for license details
- * (C) Steffen Wendzel, www.wendzel.de, 2024, 2025  */
+ * (C) Steffen Wendzel, www.wendzel.de, 2024, 2025 */
 #include "amphi.h"
 
 int main(int argc, char *argv[])
@@ -106,8 +106,14 @@ int main(int argc, char *argv[])
 				write(fp_out, (char *)(comprbuf + i + 1), magic_num * CHUNK_SIZE);
 				
 				/* In incremental mode, we need to add the plain data to the dict-file
-				 * and also to our dictbuf and adjust the length variable dictfile_len. */
-				if (incr) {
+				 * and also to our dictbuf and adjust the length variable dictfile_len.
+				 * Note: the dictionary could grow larger than MAX_DICT_LEN but takes no effect as
+				 * amphi does not point to it. For this reason, we do not extent the dictionary
+				 * in such a case (to prevent unnecessarily large dictionary files).
+				 * We might use some kind of circular buffer in future versions to improve the
+				 * performance on long-lasting flows in which the content changes over time.
+				 */
+				if (incr && ( dictfile_len + (magic_num * CHUNK_SIZE) ) < MAX_DICT_LEN) {
 					int bytes = 0;
 					if (verbose >= 2) {
 						printf ("extending dictionary file\n");

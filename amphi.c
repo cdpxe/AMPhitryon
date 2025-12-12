@@ -11,8 +11,9 @@
 				if (!(write(fp_compr, plain_buf, write_plain * CHUNK_SIZE))) { \
 					perror("write to compr file"); exit(1); \
 				} \
-				/* in case of incr mode: */ \
-				if (incr) { \
+				/* in case of incr mode: only write additional content to dictfile if there */ \
+				/* is still space left! */ \
+				if (incr && MAX_DICT_LEN > (dictfile_len + (write_plain * CHUNK_SIZE))) { \
 					int bytes = 0; \
 					/* (1) write chunks to dict-file (extend the file */ \
 					if (verbose >= 2) { printf ("extending dictionary file.\n"); } \
@@ -26,10 +27,9 @@
 					if (dictbuf == NULL) { perror("realloc(dictbuf)"); exit(1); } \
 					memcpy(dictbuf + dictfile_len, plain_buf, write_plain * CHUNK_SIZE); \
 					dictfile_len += write_plain * CHUNK_SIZE; \
-					/* Don't forget to update the amp_ptr as we calculate offsets now with the realloc()ed \
-					 * and thus potentially shifted address range! */ \
-					amp_ptr = (void *) memmem(dictbuf, dictfile_len, buf, CHUNK_SIZE); \
-				} \
+					/* Don't forget to update the amp_ptr (we cannot reach a pointer > MAX_DICT_LEN due to the check above */ \
+					amp_ptr = (void *) memmem(dictbuf, (dictfile_len < MAX_DICT_LEN ? dictfile_len : MAX_DICT_LEN), buf, CHUNK_SIZE); \
+				} else { if (incr && verbose) fprintf(stderr, "reached max. dictionary size (max=%d, len is now=%ld). write_plain=%d, chunk size=%d!\n", MAX_DICT_LEN, dictfile_len, write_plain, CHUNK_SIZE); } \
 				write_plain = 0; \
 				written_magic_bytes_for_blocks++; \
 				bzero(plain_buf, sizeof(plain_buf));
@@ -144,8 +144,9 @@ int main(int argc, char *argv[])
 	while ((byte_count = read(fp_msg, buf, CHUNK_SIZE))) {
 		if (verbose >= 2)
 			printf("read: 0x%x (string=%c%c%c%c[...])\n", (unsigned int)*buf, buf[0], buf[1], buf[2], buf[3]);
-		/* try to get an amp_ptr match (chk if we can find buf in the dictfile) */
-		amp_ptr = (void *) memmem(dictbuf, dictfile_len, buf, CHUNK_SIZE);
+		/* try to get an amp_ptr match (chk if we can find buf in the dictfile), but make sure the pointer fits in the
+		 * max. bitlength of the 23 pointer bits. */
+		amp_ptr = (void *) memmem(dictbuf, (dictfile_len < MAX_DICT_LEN ? dictfile_len : MAX_DICT_LEN), buf, CHUNK_SIZE);
 		if (amp_ptr && byte_count == CHUNK_SIZE /* must be chunk size, otherwise we accidentally matched trailing 0 bits */) {
 		
 			/* before writing this POINTER, check if there's PLAIN stuff to be written first */

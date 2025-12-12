@@ -6,11 +6,11 @@
 
 # configuration parameters
 CHUNK_SIZE_LIST="4 5 6 7 8 9 10 12 15 20 25 30 35 40 45 50"
-NUM_OF_BINARIES=10
 aDICT=empty.dict_a # for incr
 bDICT=empty.dict_b # for incr
 
 # static mode
+NUM_OF_BINARIES=10
 echo '--------- (1) TESTING STATIC MODE ---------'
 cp /usr/bin/gcc ./ # we will use a binary as a dictionary
 for CHUNK_SIZE in $CHUNK_SIZE_LIST ; do
@@ -32,10 +32,11 @@ for CHUNK_SIZE in $CHUNK_SIZE_LIST ; do
 done
 
 # incr mode
+NUM_OF_BINARIES=50
 echo; echo; echo
 echo '--------- (2) TESTING INCREMENTAL MODE ---------'
-echo > $aDICT; echo > $bDICT; # reset the dictionary files of CS and CR
 for CHUNK_SIZE in $CHUNK_SIZE_LIST ; do
+    echo > $aDICT; echo > $bDICT; # reset the dictionary files of CS and CR
     echo "Chunk size: ${CHUNK_SIZE}:"
     for MSG_FILE in `ls /usr/bin | head  -n $NUM_OF_BINARIES`; do
         echo -n "  ${MSG_FILE} ..."
