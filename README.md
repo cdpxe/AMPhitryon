@@ -43,10 +43,10 @@ done < \#ubuntu.txt
 
 **What do the parameters mean?** The first parameter ("`5`") is the chunk size that we compress (in bytes). The second parameter (`new.dict`) is the filename in which we store our dictionary. The third parameter tells the tool the filename (`message`) containing the input message that we want to compress. The third parameter (`compr.out`) tells the tool in which file the compressed result must be saved. Finally, "`incr`" activates the incremental mode described in our paper. If the parameter is left, a static dictionary can be used.
 
-While the previous commands seem to work, let's **check if the compression actually works!** Therefore, we compare the size of the compressed result (*compr.out*) with the size of the input (*message* file). To this end, you can execute `run.sh` which takes the 116 chat messages to build a very small dictionary.
+While the previous commands seem to work, let's **check if the compression actually works!** Therefore, we compare the size of the compressed result (*compr.out*) with the size of the input (*message* file). To this end, you can execute `run_test.sh` which takes the 116 chat messages to build a very small dictionary.
 
 ```
-$ ./run.sh
+$ ./run_test.sh
 chunk 1: saved -2 bytes (compressed=36 bytes, original=34 bytes in message). Factor: 1.05882
    pointers: 0,  plain chunks: 1,  ratio: 0
 chunk 2: saved 6 bytes (compressed=37 bytes, original=43 bytes in message). Factor: 0.860465
