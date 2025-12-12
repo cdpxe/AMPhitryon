@@ -5,10 +5,10 @@ CFLAGS=-I. -Wall $(GDB) -DDEBUG
 all : amphi deamphi
 
 amphi : amphi.c lib.c amphi.h
-	$(CC) $(CFLAGS) -o amphi amphi.c lib.c
+	$(CC) $(CFLAGS) -o amphi amphi.c lib.c -lc
 
 deamphi : deamphi.c lib.c amphi.h
-	$(CC) $(CFLAGS) -o deamphi deamphi.c lib.c
+	$(CC) $(CFLAGS) -o deamphi deamphi.c lib.c -lc
 
 clean :
 	rm -f amphi deamphi
