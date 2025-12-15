@@ -1,6 +1,26 @@
  /* AMPhitryon's compressor, see `LICENSE' file for license details
- * (C) Steffen Wendzel, www.wendzel.de, 2024, 2025  */
+ * (C) Steffen Wendzel, www.wendzel.de, 2024, 2025.
+ * Time measurement code taken from the CCEAP tool, (C) S. Wendzel, 2019 */
 #include "amphi.h"
+
+//#include <arpa/inet.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/ioctl.h>
+#include <errno.h>
+#include <time.h>
+#include <sys/time.h>
+#include <ctype.h>
+#include <netinet/tcp.h>
+#include <inttypes.h>
+#include <math.h>
+#include <time.h>
+
+#ifdef __MACH__
+ #include <mach/clock.h>
+ #include <mach/mach.h>
+#endif
+
 
 #define WRITE_PLAIN 		if (verbose) printf("writing plain blocks (%i).\n", write_plain); \
 				/* first write the number of plain blocks here */ \
@@ -47,6 +67,41 @@ void report_magic_byte(int written_magic_bytes_for_ptrs, int written_magic_bytes
 	close(fp_log);
 	if (verbose)
 		printf("---\nSummary:   pointers: %i; plain blocks: %i\n", written_magic_bytes_for_ptrs, written_magic_bytes_for_blocks);
+}
+
+void print_time_diff(void) /* taken from CCEAP */
+{
+	long ms;
+	time_t s;
+	struct timespec spec_now;
+	static struct timespec spec_last;
+	static int first_call = 1;
+#ifdef __MACH__ /* code from Stackoverflow.com (Mac OS lacks clock_gettime()) */
+	clock_serv_t cclock;
+	mach_timespec_t mts;
+
+	host_get_clock_service(mach_host_self(), CALENDAR_CLOCK, &cclock);
+	clock_get_time(cclock, &mts);
+	mach_port_deallocate(mach_task_self(), cclock);
+	spec_now.tv_sec = mts.tv_sec;
+	spec_now.tv_nsec = mts.tv_nsec;
+#else
+	clock_gettime(CLOCK_REALTIME, &spec_now);
+#endif
+	
+	if (first_call) {
+		first_call = 0;
+	} else {
+		s  = spec_now.tv_sec - spec_last.tv_sec;
+		ms = (spec_now.tv_nsec - spec_last.tv_nsec) / 1.0e6;	
+		if (ms < 0) {
+			ms = 1000 + ms;
+			s -= 1;
+		}
+
+		printf("Compression time: %"PRIdMAX".%03ld\n", (intmax_t)s, ms);
+	}
+	bcopy(&spec_now, &spec_last, sizeof(struct timespec));
 }
 
 int main(int argc, char *argv[])
@@ -139,6 +194,7 @@ int main(int argc, char *argv[])
 		if (verbose>=2) printf("successfully read %d bytes from dictfile.\n", read_bytes_from_dict);
 	}
 	
+	print_time_diff(); /* start measuring computational time, since preparation is done now */
 	bzero(plain_buf, sizeof(plain_buf));
 	bzero(buf, sizeof(buf));
 	while ((byte_count = read(fp_msg, buf, CHUNK_SIZE))) {
@@ -224,7 +280,8 @@ int main(int argc, char *argv[])
 		if (verbose) printf("writing left-over plain blocks.\n");
 		WRITE_PLAIN
 	}
-	
+
+	print_time_diff();
 	report_magic_byte(written_magic_bytes_for_ptrs, written_magic_bytes_for_blocks, verbose);
 	
 	close(fp_dict);
