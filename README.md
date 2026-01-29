@@ -1,6 +1,6 @@
 # AMPhitryon
 
-This code implements the *AMPhitryon* compression scheme by S. Wendzel and S. Zillien (tailored, but not limited, to network packet compression in censorship circumvention/covert channel setups). This code belongs to the following submission:
+This code implements the *AMPhitryon* compression scheme  (tailored, but not limited, to network packet compression in censorship circumvention/covert channel setups). This code belongs to the following submission:
 
 [Steffen Wendzel](https://scholar.google.de/citations?user=DZqkZ1IAAAAJ&hl=de&oi=ao), [Sebastian Zillien](https://scholar.google.de/citations?user=kdCKry4AAAAJ&hl=de), [Sebastian Zander](https://scholar.google.de/citations?hl=de&user=8csOslsAAAAJ): ***AMPhitryon*: Compression for Small Data Using Local Dictionaries to Improve Covert and Circumvention Channels**, under review.
 
