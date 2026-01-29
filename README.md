@@ -1,12 +1,12 @@
 # AMPhitryon
 
-This code implements the *AMPhitryon* compression scheme  (tailored, but not limited, to network packet compression in censorship circumvention/covert channel setups). This code belongs to the following submission:
+This code implements the *AMPhitryon* compression scheme. AMPhitryon is tailored, but not limited, to network packet compression in censorship circumvention/covert channel setups. This code belongs to the following submission:
 
 [Steffen Wendzel](https://scholar.google.de/citations?user=DZqkZ1IAAAAJ&hl=de&oi=ao), [Sebastian Zillien](https://scholar.google.de/citations?user=kdCKry4AAAAJ&hl=de), [Sebastian Zander](https://scholar.google.de/citations?hl=de&user=8csOslsAAAAJ): ***AMPhitryon*: Compression for Small Data Using Local Dictionaries to Improve Covert and Circumvention Channels**, under review.
 
-AMPhitryon is tailored to compress network traffic (or any other kind of data chunks) using an (iterative) dictionary approach. This way, payload sizes below 50 bytes (as small as 4 bytes) can be compressed in the context of the network flows in which they appear. Such a compression is currently not feasible with other approaches.
+AMPhitryon is tailored to compress network traffic (or any other kind of data chunks) using an (iterative) dictionary approach. This way, payload sizes below 50 bytes (as small as 4 bytes) can be **compressed in the context of the network flows in which they appear**.
 
-## Why AMPhitryon is Useful?
+## Why AMPhitryon is Useful
 
 Network traffic fingerprinting (e.g., the detection and identification of circumvention traffic) depends on the amount of traffic that can be observed. While larger packets can be compressed rather easily, **small packets are rarely compressible and thus leave valuable traces for adveraries**. **AMPhitryon addresses this issue and compresses such packets**. For this reason, **fewer traffic data is available for an adversary to conduct passive attacks** such as website fingerprinting (WFP) when censorship circumvention tools or covert channel tools are used.
 
