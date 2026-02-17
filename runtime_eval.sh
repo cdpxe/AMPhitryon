@@ -1,8 +1,8 @@
 #!/bin/bash -e
-# bf_check (brute force amphi checker). Written by S. Wendzel, 2025/2026.
+# runtime_eval.sh: Runtime evaluation for amphi. Written by S. Wendzel, 2025/2026.
 # Tested using MacOS.
-# This script simply runs amphi + deamphi many, many times and checks whether
-# the hash value of the decompressed result is equal to the original value.
+# This script measures the time it takes to let amphi perform using
+# different parameters.
 
 export LANG=C
 export CLANG=C

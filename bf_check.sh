@@ -1,6 +1,6 @@
 #!/bin/bash -e
-# bf_check (brute force amphi checker).
-# Tested under MacOS and Debían.
+# bf_check (brute force amphi checker). Written by S. Wendzel, 2025/2026.
+# Tested using MacOS and Debían.
 # This script simply runs amphi + deamphi many, many times and checks whether
 # the hash value of the decompressed result is equal to the original value.
 
