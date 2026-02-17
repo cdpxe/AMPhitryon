@@ -1,6 +1,6 @@
 #!/bin/bash -e
 # runtime_eval.sh: Runtime evaluation for amphi. Written by S. Wendzel, 2025/2026.
-# Tested using MacOS.
+# Tested using macOS.
 # This script measures the time it takes to let amphi perform using
 # different parameters.
 
