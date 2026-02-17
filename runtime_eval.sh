@@ -1,11 +1,11 @@
 #!/bin/bash -e
 # runtime_eval.sh: Runtime evaluation for amphi. Written by S. Wendzel, 2025/2026.
 # Tested using macOS.
-# This script measures the time it takes to let amphi perform using
-# different parameters.
+# This script measures the time it takes to let amphi compress data using
+# different chunk sizes, dictionary sizes.
 
 export LANG=C
-export CLANG=C
+export CLANG=$LANG
 # configuration parameters
 CHUNK_SIZE_LIST="4 5 6 7 8 9 10 12 15 20 25 30 35 40 45 50"
 DICT_SIZE_LIST="10000 50000 100000 200000 500000 1000000 2000000 4000000 " #5000000 8388606" #max
