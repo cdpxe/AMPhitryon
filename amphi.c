@@ -181,7 +181,7 @@ int main(int argc, char *argv[])
 
 	if (verbose>=2) printf("reading %s... ", dictfile);
 	
-	dictfile_len = get_filelen(dictfile);
+	dictfile_len = get_file_len(dictfile);
 	if (verbose>=2) printf("length=%li bytes\n", dictfile_len);
 	if (!(dictbuf = (void *) malloc(dictfile_len + 1))) {
 		perror("malloc"); exit(1);

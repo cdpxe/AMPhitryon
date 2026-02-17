@@ -3,7 +3,7 @@
  * (C) Steffen Wendzel, www.wendzel.de, 2024, 2025  */
 #include "amphi.h"
 
-int get_filelen(char *filename)
+int get_file_len(char *filename)
 {
 	int len;
 	FILE *fp;

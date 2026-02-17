@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
 	if ((fp_dict = open(dictfile, dict_open_mode)) == -1) {
 		perror("open(dictfile)"); exit(1);
 	}	
-	dictfile_len = get_filelen(dictfile);
+	dictfile_len = get_file_len(dictfile);
 	if (verbose>=2) printf("length=%li bytes\n", dictfile_len);
 	if (!(dictbuf = (void *) malloc(dictfile_len + 1))) {
 		perror("malloc"); exit(1);
@@ -80,7 +80,7 @@ int main(int argc, char *argv[])
 	if ((fp_compr = open(comprfile, O_RDONLY)) == -1) {
 		perror("open(comprfile)"); exit(1);
 	}
-	comprfile_len = get_filelen(comprfile);
+	comprfile_len = get_file_len(comprfile);
 	if (verbose >= 2) printf("length=%li bytes\n", comprfile_len);
 	if (!(comprbuf = (void *) malloc(comprfile_len + 1))) {
 		perror("malloc"); exit(1);

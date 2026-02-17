@@ -15,4 +15,4 @@
 #define MAX_DICT_LEN 8388607 /* = 2^23 bits -1 */
 #define MAX_PLAIN_BLOCKS 126
 
-int get_filelen(char *);
+int get_file_len(char *);
