@@ -5,6 +5,8 @@ This code implements the *AMPhitryon* compression scheme. AMPhitryon is tailored
 | [Steffen Wendzel](https://scholar.google.de/citations?user=DZqkZ1IAAAAJ&hl=de&oi=ao), [Sebastian Zillien](https://scholar.google.de/citations?user=kdCKry4AAAAJ&hl=de), [Sebastian Zander](https://scholar.google.de/citations?hl=de&user=8csOslsAAAAJ): **AMPhitryon: Compression for Small Data Using Local Dictionaries to Improve Covert and Circumvention Channels**, in Proc. 41th IFIP SEC Conference 2026, in press. |
 |----|
 
+Note: There is a [list of network covert channel tools](https://github.com/cdpxe/NetworkCovertChannels).
+
 AMPhitryon is tailored to compress network traffic (or any other kind of data chunks) using an (iterative) dictionary approach. This way, payload sizes below 50 bytes (as small as 4 bytes) can be **compressed in the context of the network flows in which they appear**.
 
 ## Why AMPhitryon is Useful
