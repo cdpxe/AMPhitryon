@@ -2,7 +2,7 @@
 
 This code implements the *AMPhitryon* compression scheme. AMPhitryon is tailored, but not limited, to network packet compression in censorship circumvention/covert channel setups. This code belongs to the following paper:
 
-| [Steffen Wendzel](https://scholar.google.de/citations?user=DZqkZ1IAAAAJ&hl=de&oi=ao), [Sebastian Zillien](https://scholar.google.de/citations?user=kdCKry4AAAAJ&hl=de), [Sebastian Zander](https://scholar.google.de/citations?hl=de&user=8csOslsAAAAJ): **AMPhitryon: Compression for Small Data Using Local Dictionaries to Improve Covert and Circumvention Channels**, in Proc. 41th IFIP SEC Conference 2026, in press. |
+| [Steffen Wendzel](https://scholar.google.de/citations?user=DZqkZ1IAAAAJ&hl=de&oi=ao), [Sebastian Zillien](https://scholar.google.de/citations?user=kdCKry4AAAAJ&hl=de), [Sebastian Zander](https://scholar.google.de/citations?hl=de&user=8csOslsAAAAJ): *AMPhitryon: Compression for Small Data Using Local Dictionaries to Improve Covert and Circumvention Channels*, in Proc. 41th IFIP SEC Conference 2026, in press. |
 |----|
 
 Note: There is a [list of network covert channel tools](https://github.com/cdpxe/NetworkCovertChannels).
