@@ -2,12 +2,12 @@
 
 This code implements the *AMPhitryon* compression scheme. AMPhitryon is tailored, but not limited, to compress small network packets in censorship circumvention/covert channel setups. This code belongs to the following paper:
 
-| [Steffen Wendzel](https://scholar.google.de/citations?user=DZqkZ1IAAAAJ&hl=de&oi=ao), [Sebastian Zillien](https://scholar.google.de/citations?user=kdCKry4AAAAJ&hl=de), [Sebastian Zander](https://scholar.google.de/citations?hl=de&user=8csOslsAAAAJ): *AMPhitryon: Compression for Small Data Using Local Dictionaries to Improve Covert and Circumvention Channels*, in Proc. 41th IFIP SEC Conference 2026, in press. |
+| [Steffen Wendzel](https://scholar.google.de/citations?user=DZqkZ1IAAAAJ&hl=de&oi=ao), [Sebastian Zillien](https://scholar.google.de/citations?user=kdCKry4AAAAJ&hl=de), [Sebastian Zander](https://scholar.google.de/citations?hl=de&user=8csOslsAAAAJ): *AMPhitryon: Compression for Small Data Using Local Dictionaries to Improve Covert and Circumvention Channels*, in Proc. 41th IFIP SEC Conference 2026, in press. **[Pre-print (PDF)](https://www.wendzel.de/dr.org/files/Papers/IFIPSEC2026_submitted_version.pdf)** |
 |----|
 
-A **pre-print** will be made available as soon as we have a DOI for the final version.
-
-Note: There is a [list of network covert channel tools](https://github.com/cdpxe/NetworkCovertChannels).
+Notes:
+- There is a [list of network covert channel tools](https://github.com/cdpxe/NetworkCovertChannels).
+- Some background information on our concept of [history covert channels](https://www.wendzel.de/misc/2026/02/28/history-cc.html)
 
 AMPhitryon is tailored to compress network traffic or any other kind of data chunks using an (iterative) dictionary approach. This way, small payload sizes of 4 to 50 bytes can be compressed. The core idea is to compress a packet's content using the content of previously seen packets of a flow (or other type of data, e.g., IoT sensor data flows).
 
