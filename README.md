@@ -9,7 +9,7 @@ A **pre-print** will be made available as soon as we have a DOI for the final ve
 
 Note: There is a [list of network covert channel tools](https://github.com/cdpxe/NetworkCovertChannels).
 
-AMPhitryon is tailored to compress network traffic or any other kind of data chunks using an (iterative) dictionary approach. This way, payload sizes below 50 bytes (even <=8 bytes) can be compressed. The core idea is to compress a packet's content using the content of previously seen packets of a flow (or other type of data, e.g., IoT sensor data flows).
+AMPhitryon is tailored to compress network traffic or any other kind of data chunks using an (iterative) dictionary approach. This way, small payload sizes of 4 to 50 bytes can be compressed. The core idea is to compress a packet's content using the content of previously seen packets of a flow (or other type of data, e.g., IoT sensor data flows).
 
 ## Why AMPhitryon is Useful
 
