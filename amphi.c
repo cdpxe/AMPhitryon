@@ -35,7 +35,7 @@
 				/* is still space left! */ \
 				if (incr && MAX_DICT_LEN > (dictfile_len + (write_plain * CHUNK_SIZE))) { \
 					int bytes = 0; \
-					/* (1) write chunks to dict-file (extend the file */ \
+					/* (1) write chunks to dict-file (extend the file) */ \
 					if (verbose >= 2) { printf ("extending dictionary file.\n"); } \
 					lseek(fp_dict, 0, SEEK_END); \
 					if (!(bytes = write(fp_dict, plain_buf, write_plain * CHUNK_SIZE))) { \
@@ -47,7 +47,7 @@
 					if (dictbuf == NULL) { perror("realloc(dictbuf)"); exit(1); } \
 					memcpy(dictbuf + dictfile_len, plain_buf, write_plain * CHUNK_SIZE); \
 					dictfile_len += write_plain * CHUNK_SIZE; \
-					/* Don't forget to update the amp_ptr (we cannot reach a pointer > MAX_DICT_LEN due to the check above */ \
+					/* Don't forget to update the amp_ptr (we cannot reach a pointer > MAX_DICT_LEN due to the check above) */ \
 					amp_ptr = (void *) memmem(dictbuf, (dictfile_len < MAX_DICT_LEN ? dictfile_len : MAX_DICT_LEN), buf, CHUNK_SIZE); \
 				} else { if (incr && verbose) fprintf(stderr, "reached max. dictionary size (max=%d, len is now=%ld). write_plain=%d, chunk size=%d!\n", MAX_DICT_LEN, dictfile_len, write_plain, CHUNK_SIZE); } \
 				write_plain = 0; \
