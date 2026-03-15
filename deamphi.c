@@ -1,5 +1,5 @@
  /* AMPhitryon's decompressor, see `LICENSE' file for license details
- * (C) Steffen Wendzel, www.wendzel.de, 2024, 2025 */
+ * (C) Steffen Wendzel, www.wendzel.de, 2026 */
 #include "amphi.h"
 
 int main(int argc, char *argv[])

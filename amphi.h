@@ -1,5 +1,5 @@
 /* AMPhitryon header file -- amphi.h, see `LICENSE' file for license details
- * (C) Steffen Wendzel, www.wendzel.de, 2024, 2025  */
+ * (C) Steffen Wendzel, www.wendzel.de, 2026  */
 #define _GNU_SOURCE
 #include <stdio.h>
 #include <sys/types.h>

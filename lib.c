@@ -1,6 +1,6 @@
 /* AMPhitryon's functions for both, its compressor and decompressor.
  * See `LICENSE' file for license details
- * (C) Steffen Wendzel, www.wendzel.de, 2024, 2025  */
+ * (C) Steffen Wendzel, www.wendzel.de, 2026  */
 #include "amphi.h"
 
 int get_file_len(char *filename)

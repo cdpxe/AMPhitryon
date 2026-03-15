@@ -1,5 +1,5 @@
  /* AMPhitryon's compressor, see `LICENSE' file for license details
- * (C) Steffen Wendzel, www.wendzel.de, 2024, 2025.
+ * (C) Steffen Wendzel, www.wendzel.de, 2026.
  * Time measurement code taken from the CCEAP tool, (C) S. Wendzel, 2019 */
 #include "amphi.h"
 
