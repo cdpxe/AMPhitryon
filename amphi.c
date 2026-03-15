@@ -14,7 +14,6 @@
 #include <netinet/tcp.h>
 #include <inttypes.h>
 #include <math.h>
-#include <time.h>
 
 #ifdef __MACH__
  #include <mach/clock.h>
@@ -154,7 +153,7 @@ int main(int argc, char *argv[])
 	}
 	if (argc >= 7)
 		verbose = atoi(argv[6]);
-	assert(verbose >= 0 || verbose <= 3);
+	assert(verbose >= 0 && verbose <= 3);
 	
 	if (verbose)
 		printf("dictfile=%s\nmsgfile=%s\ncomprfile=%s\nincr=%i\nverbosity=%i\n", dictfile, msgfile, comprfile, incr, verbose);

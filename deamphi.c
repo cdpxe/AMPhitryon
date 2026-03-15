@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 	}
 	if (argc >= 7)
 		verbose = atoi(argv[6]);
-	assert(verbose >= 0 || verbose <= 3);
+	assert(verbose >= 0 && verbose <= 3);
 	
 	if (verbose)
 		printf("dictfile=%s\ncomprfile=%s\noutfile=%s\nincr=%i\nverbosity=%i\n", dictfile, comprfile, outfile, incr, verbose);
