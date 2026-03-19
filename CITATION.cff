@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the repository and the associated paper."
+title: "AMPhitryon"
+repository-code: "https://github.com/cdpxe/AMPhitryon"
+license: "MIT"
+authors:
+  - family-names: "Wendzel"
+    given-names: "Steffen"
+    orcid: "https://orcid.org/0000-0002-1913-5912"
+  - family-names: "Zillien"
+    given-names: "Sebastian"
+    orcid: "https://orcid.org/0000-0003-3360-1251"
+  - family-names: "Zander"
+    given-names: "Sebastian"
+    orcid: "https://orcid.org/0000-0002-2084-7204"
+preferred-citation:
+  type: conference-paper
+  title: "AMPhitryon: Efficient Small Data Compression for Low-Bandwidth Covert Channels"
+  authors:
+    - family-names: "Wendzel"
+      given-names: "Steffen"
+      orcid: "https://orcid.org/0000-0002-1913-5912"
+    - family-names: "Zillien"
+      given-names: "Sebastian"
+      orcid: "https://orcid.org/0000-0003-3360-1251"
+    - family-names: "Zander"
+      given-names: "Sebastian"
+      orcid: "https://orcid.org/0000-0002-2084-7204"
+  year: 2026
+  publisher: "Springer"
+  conference: "41st IFIP International Conference on ICT Systems Security and Privacy Protection (IFIP SEC 2026)"
+  location: "Perth, Australia"
